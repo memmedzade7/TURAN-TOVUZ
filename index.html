@@ -91,7 +91,7 @@
     <!-- Dynamic Match Section -->
     <section id="match" class="py-24 max-w-5xl mx-auto px-4">
         <div class="text-center mb-12">
-            <span class="text-turanBlue font-bold text-xs uppercase tracking-widest">Avtomatik Canlı Təqvim</span>
+            <span class="text-turanBlue font-bold text-xs uppercase tracking-widest">Təqvim Mərkəzi</span>
             <h2 class="text-3xl sm:text-4xl font-black mt-1 uppercase tracking-tight">Növbəti Matç</h2>
         </div>
 
@@ -99,8 +99,8 @@
             <div class="absolute top-0 right-0 transform translate-x-8 -translate-y-8 w-40 h-40 bg-turanBlue/10 rounded-full blur-2xl"></div>
             
             <div class="flex justify-between items-center mb-8 border-b border-white/5 pb-4">
-                <span id="match-league" class="text-turanRed text-xs font-black tracking-widest uppercase">Azərbaycan Premyer Liqası</span>
-                <span id="match-date" class="text-gray-400 text-xs font-semibold"><i class="fa-regular fa-calendar mr-1.5 text-turanBlue"></i> Sinxronizasiya olunur...</span>
+                <span id="match-league" class="text-turanRed text-xs font-black tracking-widest uppercase">Yüklənir...</span>
+                <span id="match-date" class="text-gray-400 text-xs font-semibold"><i class="fa-regular fa-calendar mr-1.5 text-turanBlue"></i> Yüklənir...</span>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-6 text-center">
@@ -115,19 +115,19 @@
 
                 <!-- VS / Time -->
                 <div class="flex flex-col items-center justify-center">
-                    <span id="match-status" class="text-turanRed font-black text-2xl tracking-wider mb-2">VS</span>
+                    <span class="text-turanRed font-black text-2xl tracking-wider mb-2">VS</span>
                     <div id="match-time" class="bg-turanDark px-6 py-2 rounded-full border border-white/10 text-xs font-bold text-gray-300">
-                        Canlı Yoxlanılır...
+                        Yüklənir...
                     </div>
                 </div>
 
                 <!-- Team 2 (Rəqib) -->
                 <div class="flex flex-col items-center">
                     <div class="w-20 h-20 bg-red-500/20 border border-red-500/40 rounded-2xl flex items-center justify-center mb-3 shadow-lg shadow-red-500/20">
-                        <i class="fa-solid fa-shield text-3xl text-turanRed" id="opponent-icon"></i>
+                        <i class="fa-solid fa-shield text-3xl text-turanRed"></i>
                     </div>
-                    <span id="opponent-name" class="font-extrabold text-lg uppercase tracking-wide">Rəqib Yüklənir</span>
-                    <span class="text-xs text-gray-400">Qonaq</span>
+                    <span id="opponent-name" class="font-extrabold text-lg uppercase tracking-wide">Yüklənir...</span>
+                    <span class="text-xs text-gray-400">Qonaq Rəqib</span>
                 </div>
             </div>
         </div>
@@ -146,25 +146,27 @@
         </div>
     </footer>
 
-    <!-- Avtomatik Matç Sisteminin Skripti -->
+    <!-- JSON Faylından Məlumatı Oxuyan Skript -->
     <script>
-        // Bu funksiya sayt hər dəfə açılanda işləyəcək və avtomatik məlumatı çəkəcək.
-        async function fetchNextMatch() {
+        async function loadMatchData() {
             try {
-                // Burada açıq futbol məlumat bazasına (və ya öz mərkəzi JSON faylına) sorğu atılır
-                // İndiki mərhələdə sistemin qüsursuz işləməsi üçün simulyasiya və avtomatik tarix yoxlaması qurulub:
-                
-                document.getElementById('match-date').innerHTML = '<i class="fa-regular fa-calendar mr-1.5 text-turanBlue"></i> Növbəti Tur: Şənbə, 19:00';
-                document.getElementById('opponent-name').innerText = 'Qarabağ FK';
-                document.getElementById('match-time').innerText = '3 Gün qaldı';
-                
+                // match.json faylından məlumatları oxuyuruq
+                const response = await fetch('match.json');
+                const data = await response.json();
+
+                // HTML elementlərinə yazırıq
+                document.getElementById('match-league').innerText = data.league;
+                document.getElementById('match-date').innerHTML = `<i class="fa-regular fa-calendar mr-1.5 text-turanBlue"></i> ${data.date}`;
+                document.getElementById('match-time').innerText = data.time;
+                document.getElementById('opponent-name').innerText = data.opponent;
+
             } catch (error) {
-                console.error("Matç məlumatı çəkilərkən xəta baş verdi:", error);
+                console.error("Məlumat oxunmadı:", error);
+                document.getElementById('opponent-name').innerText = "Məlumat yoxdur";
             }
         }
 
-        // Səhifəyə girən kimi funksiyanı işə sal
-        window.onload = fetchNextMatch;
+        window.onload = loadMatchData;
     </script>
 </body>
 </html>
