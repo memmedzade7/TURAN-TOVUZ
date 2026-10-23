@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="az" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turan Tovuz Fan-Klub | Boz Qurdlar</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        turanBlue: '#0083B0',
+                        turanDarkBlue: '#0B132B',
+                        turanRed: '#D90429',
+                        turanDark: '#050B14'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-turanDark text-white antialiased selection:bg-turanRed selection:text-white">
 
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-turanDark/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo & Brand -->
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-turanRed to-turanBlue p-0.5 flex items-center justify-center shadow-lg shadow-turanBlue/30">
+                    <div class="w-full h-full bg-turanDark rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-wolf-pack-battalion text-turanRed text-xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-wider uppercase bg-gradient-to-r from-white via-gray-200 to-turanRed bg-clip-text text-transparent">TURAN TOVUZ</span>
+                    <span class="block text-xs font-semibold tracking-widest text-turanBlue uppercase">Fan-Klub // Boz Qurdlar</span>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm tracking-wide">
+                <a href="#hero" class="hover:text-turanRed transition-colors">Ana Səhifə</a>
+                <a href="#about" class="hover:text-turanRed transition-colors">Boz Qurdlar</a>
+                <a href="#match" class="hover:text-turanRed transition-colors">Matç Təqvimi</a>
+                <a href="#shop" class="hover:text-turanRed transition-colors">Atributika</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div>
+                <a href="#shop" class="bg-turanRed hover:bg-red-700 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-turanRed/40 transition-all transform hover:-translate-y-0.5">
+                    Üzv Ol <i class="fa-solid fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-b from-turanDarkBlue via-turanDark to-turanDark">
+        <!-- Background Glow Elements -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-turanBlue/15 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-turanRed/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-20">
+            <div class="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
+                <i class="fa-solid fa-shield-halved text-turanRed"></i>
+                <span class="text-xs font-bold tracking-widest uppercase text-gray-300">Tovuzun Qüruru, Tribunaların Səsi</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase mb-6 leading-tight">
+                Bir Sevda, Bir Yol: <br>
+                <span class="bg-gradient-to-r from-turanBlue via-white to-turanRed bg-clip-text text-transparent">Boz Qurdlar İrəli!</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-gray-400 text-base sm:text-lg mb-10">
+                Turan Tovuz fan-klubunun rəsmi platformasına xoş gəlmisən. Qalibiyyət yolunda komandamızı yalnız qoyma, tribunada yerini al!
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#shop" class="w-full sm:w-auto bg-gradient-to-r from-turanRed to-red-600 hover:from-red-600 hover:to-turanRed text-white px-8 py-4 rounded-xl font-extrabold shadow-xl shadow-turanRed/30 transition-all transform hover:scale-105">
+                    <i class="fa-solid fa-store mr-2"></i> Atributika Mağazası
+                </a>
+                <a href="#match" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl font-extrabold backdrop-blur-md transition-all">
+                    <i class="fa-regular fa-calendar-days mr-2 text-turanBlue"></i> Növbəti Matç
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Match Countdown Section -->
+    <section id="match" class="py-16 bg-gradient-to-r from-turanDarkBlue/50 via-turanDark to-turanDarkBlue/50 border-y border-white/5">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-gradient-to-br from-white/5 to-white/[02] border border-white/10 rounded-3xl p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 transform translate-x-8 -translate-y-8 w-40 h-40 bg-turanBlue/10 rounded-full blur-2xl"></div>
+                
+                <div class="text-center mb-8">
+                    <span class="text-turanRed text-xs font-black tracking-widest uppercase">Mövsüm 2026</span>
+                    <h2 class="text-2xl sm:text-3xl font-black mt-1 uppercase">Növbəti Döyüş</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-6 text-center">
+                    <!-- Team 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 bg-turanBlue/20 border border-turanBlue/40 rounded-2xl flex items-center justify-center mb-3 shadow-lg shadow-turanBlue/20">
+                            <i class="fa-solid fa-shield text-3xl text-turanBlue"></i>
+                        </div>
+                        <span class="font-extrabold text-lg uppercase tracking-wide">Turan Tovuz</span>
+                        <span class="text-xs text-gray-400">Ev Sahibi</span>
+                    </div>
+
+                    <!-- VS / Countdown -->
+                    <div class="flex flex-col items-center justify-center">
+                        <span class="text-turanRed font-black text-3xl tracking-wider mb-2">VS</span>
+                        <div class="bg-turanDark px-6 py-2 rounded-full border border-white/10 text-xs font-bold text-gray-300">
+                            <i class="fa-regular fa-clock text-turanBlue mr-1.5"></i> 3 Gün 14 Saat Qaldı
+                        </div>
+                    </div>
+
+                    <!-- Team 2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 bg-red-500/20 border border-red-500/40 rounded-2xl flex items-center justify-center mb-3 shadow-lg shadow-red-500/20">
+                            <i class="fa-solid fa-shield text-3xl text-turanRed"></i>
+                        </div>
+                        <span class="font-extrabold text-lg uppercase tracking-wide">Rəqib Klub</span>
+                        <span class="text-xs text-gray-400">Premyer Liqa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop / Products Preview Section -->
+    <section id="shop" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-turanBlue font-bold text-xs uppercase tracking-widest">Fan-Klub Atributikası</span>
+                <h2 class="text-3xl sm:text-4xl font-black mt-1 uppercase tracking-tight">Rəsmi Məhsullar</h2>
+            </div>
+            <p class="text-gray-400 text-sm mt-2 md:mt-0 max-w-md">
+                Boz Qurdlar ruhunu üzərində daşı! Klubunu dəstəkləmək üçün xüsusi dizayn edilmiş atributikalar.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-5 hover:border-turanBlue/50 transition-all group">
+                <div class="h-64 bg-gradient-to-br from-turanDarkBlue to-turanDark rounded-xl mb-4 flex items-center justify-center relative overflow-hidden border border-white/5">
+                    <div class="absolute inset-0 bg-turanBlue/5 group-hover:bg-turanBlue/10 transition-colors"></div>
+                    <i class="fa-solid fa-muffler text-6xl text-turanBlue group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="absolute top-3 left-3 bg-turanRed text-white text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase">Bestseller</span>
+                </div>
+                <h3 class="font-extrabold text-lg mb-1 group-hover:text-turanBlue transition-colors">Turan Tovuz Fan Şərfi</h3>
+                <p class="text-gray-400 text-xs mb-4">Yüksək keyfiyyətli toxunma, xüsusi Boz Qurd dizaynı ilə.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-black text-white">20 ₼</span>
+                    <button class="bg-white/10 hover:bg-turanRed text-white px-4 py-2 rounded-xl text-xs font-bold transition-colors flex items-center space-x-1.5">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Sifariş Et</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-5 hover:border-turanBlue/50 transition-all group">
+                <div class="h-64 bg-gradient-to-br from-turanDarkBlue to-turanDark rounded-xl mb-4 flex items-center justify-center relative overflow-hidden border border-white/5">
+                    <div class="absolute inset-0 bg-turanBlue/5 group-hover:bg-turanBlue/10 transition-colors"></div>
+                    <i class="fa-solid fa-hat-cowboy text-6xl text-turanRed group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="absolute top-3 left-3 bg-turanBlue text-white text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase">Yeni</span>
+                </div>
+                <h3 class="font-extrabold text-lg mb-1 group-hover:text-turanBlue transition-colors">Boz Qurd Papaq & Kepka</h3>
+                <p class="text-gray-400 text-xs mb-4">Tribunalar üçün xüsusi tikilmiş loqolu papaqlar.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-black text-white">15 ₼</span>
+                    <button class="bg-white/10 hover:bg-turanRed text-white px-4 py-2 rounded-xl text-xs font-bold transition-colors flex items-center space-x-1.5">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Sifariş Et</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="bg-white/[0.03] border border-white/10 rounded-2xl p-5 hover:border-turanBlue/50 transition-all group">
+                <div class="h-64 bg-gradient-to-br from-turanDarkBlue to-turanDark rounded-xl mb-4 flex items-center justify-center relative overflow-hidden border border-white/5">
+                    <div class="absolute inset-0 bg-turanBlue/5 group-hover:bg-turanBlue/10 transition-colors"></div>
+                    <i class="fa-solid fa-id-card text-6xl text-amber-500 group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase">VIP Üzvlük</span>
+                </div>
+                <h3 class="font-extrabold text-lg mb-1 group-hover:text-turanBlue transition-colors">Fan-Klub Üzvlük Kartı</h3>
+                <p class="text-gray-400 text-xs mb-4">Stadionda xüsusi üstünlüklər və endirimlər qazandıran kart.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-black text-white">25 ₼</span>
+                    <button class="bg-white/10 hover:bg-turanRed text-white px-4 py-2 rounded-xl text-xs font-bold transition-colors flex items-center space-x-1.5">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Sifariş Et</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-turanDarkBlue border-t border-white/10 py-12 text-center text-gray-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center space-y-4">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-wolf-pack-battalion text-turanRed text-lg"></i>
+                <span class="font-black text-white tracking-widest uppercase">Turan Tovuz Fan-Klub</span>
+            </div>
+            <p>© 2026 Bütün hüquqlar qorunur. Erenfilm & Turan Tovuz əməkdaşlığı ilə.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
